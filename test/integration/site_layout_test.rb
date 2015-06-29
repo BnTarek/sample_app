@@ -14,10 +14,4 @@ class SiteLayoutTest < ActionDispatch::IntegrationTest
     assert_select "title", full_title("Sign up")
   end
 
-  test "home links" do
-    get root_path
-    assert_template 'static_pages/home'
-    
-  end
-
 end
