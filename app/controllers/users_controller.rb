@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_filter :authorize_user, only: :new
   
   def show
     @user = User.find(params[:id])
@@ -24,6 +25,13 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:name, :email, :password,
                                    :password_confirmation)
+    end
+
+    def authorize_user
+      if current_user
+        flash[:danger] = "You are already logged in!"
+        redirect_to root_path
+      end
     end
 
 end
