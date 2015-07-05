@@ -32,9 +32,9 @@ module SessionsHelper
 
   # Forgets a persistent session.
   def forget(user)
-    user.forget
     cookies.delete(:user_id)
     cookies.delete(:remember_token)
+    user.forget
   end
 
   # Logs out the current user.
