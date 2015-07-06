@@ -86,4 +86,5 @@ Rails.application.configure do
     password:             '1234567890ABC',
     authentication:       'plain',
     enable_starttls_auto: true  }
+  config.action_mailer.default_url_options = { :host => "mallaky.herokuapp.com" }
 end
