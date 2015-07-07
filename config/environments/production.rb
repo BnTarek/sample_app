@@ -83,7 +83,7 @@ Rails.application.configure do
   ActionMailer::Base.smtp_settings = {
     :port           => 587,
     :address        => "smtp.mailgun.org",
-    :domain         => "mallaky.herokuapp.com",
+    :domain         => "sandbox496b403716e5480380117c73cee73806.mailgun.org",
     :user_name      => "postmaster@sandbox496b403716e5480380117c73cee73806.mailgun.org",
     :password       => "a5dffc28eaa2690c46d52539bfc63cd7",
     :authentication => :plain,
