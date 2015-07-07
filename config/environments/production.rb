@@ -77,27 +77,27 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.action_mailer.default_url_options = { :host => 'mallaky.herokuapp.com' }
-  config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.delivery_method = :smtp
-  ActionMailer::Base.smtp_settings = {
-    :port           => 587,
-    :address        => "smtp.mailgun.org",
-    :domain         => "sandbox496b403716e5480380117c73cee73806.mailgun.org",
-    :user_name      => "postmaster@sandbox496b403716e5480380117c73cee73806.mailgun.org",
-    :password       => "a5dffc28eaa2690c46d52539bfc63cd7",
-    :authentication => :plain,
-  }
-  # config.action_mailer.perform_deliveries = true
   # config.action_mailer.default_url_options = { :host => 'mallaky.herokuapp.com' }
+  # config.action_mailer.raise_delivery_errors = true
   # config.action_mailer.delivery_method = :smtp
-  # config.action_mailer.smtp_settings = {
-  #   :address => 'smtp.mandrillapp.com',
-  #   :port => 587, # ports 587 and 2525 are also supported with STARTTLS
-  #   :enable_starttls_auto => true, # detects and uses STARTTLS
-  #   :user_name => 'mallakyapp@gmail.com',
-  #   :password => '_I3J8F2sVOLYgiuALKKB8w', # any valid Mandrill API key
-  #   :authentication => 'login', # Mandrill supports 'plain' or 'login'
-  #   :domain => 'mallaky.herokuapp.com', # your domain to identify your server when connecting
+  # ActionMailer::Base.smtp_settings = {
+  #   :port           => 587,
+  #   :address        => "smtp.mailgun.org",
+  #   :domain         => "sandbox496b403716e5480380117c73cee73806.mailgun.org",
+  #   :user_name      => "postmaster@sandbox496b403716e5480380117c73cee73806.mailgun.org",
+  #   :password       => "a5dffc28eaa2690c46d52539bfc63cd7",
+  #   :authentication => :plain,
   # }
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.default_url_options = { :host => 'mallaky.herokuapp.com' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address => 'smtp.mandrillapp.com',
+    :port => 587, # ports 587 and 2525 are also supported with STARTTLS
+    :enable_starttls_auto => true, # detects and uses STARTTLS
+    :user_name => 'mallakyapp@gmail.com',
+    :password => '_I3J8F2sVOLYgiuALKKB8w', # any valid Mandrill API key
+    :authentication => 'login', # Mandrill supports 'plain' or 'login'
+    :domain => 'mallaky.herokuapp.com', # your domain to identify your server when connecting
+  }
 end
