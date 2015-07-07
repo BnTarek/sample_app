@@ -80,13 +80,12 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { :host => 'mallaky.herokuapp.com' }
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-      :enable_starttls_auto => true,
-      :address => "smtp.gmail.com",
-      :port => 587,
-      :domain => "gmail.com",
-      :authentication => :login,
-      :user_name => "malllakynoreply@gmail.com",
-      :password => "123698745ABC"
+  ActionMailer::Base.smtp_settings = {
+    :port           => 587,
+    :address        => "smtp.mailgun.org",
+    :domain         => "mallaky.herokuapp.com",
+    :user_name      => "postmaster@sandbox496b403716e5480380117c73cee73806.mailgun.org",
+    :password       => "a5dffc28eaa2690c46d52539bfc63cd7",
+    :authentication => :plain,
   }
 end
