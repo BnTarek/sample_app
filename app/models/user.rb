@@ -77,6 +77,12 @@ class User < ActiveRecord::Base
     reset_sent_at < 2.hours.ago
   end
 
+  # recreates and assigns the activation token and digest.
+  def recreate_activation_digest
+    update_attribute(:activation_token, User.new_token)
+    update_attribute(:activation_digest, User.digest(activation_token))
+  end
+
   private
 
     # Converts email to all lower-case.
